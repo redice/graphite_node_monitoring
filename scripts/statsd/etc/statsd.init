@@ -1,0 +1,11 @@
+[program:nodejs_statsd]
+command = /usr/local/bin/node /opt/nodejs/statsd/stats.js /opt/nodejs/statsd/config.js
+directory = /opt/nodejs/statsd
+user = root
+autostart = true
+autorestart = true
+environment = NODE_ENV="production"
+logfile=/var/log/nodejs/statsd.log
+logfile_maxbytes=20MB
+logfile_backups=10
+

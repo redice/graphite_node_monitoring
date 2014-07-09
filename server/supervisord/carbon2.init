@@ -1,0 +1,13 @@
+[program:graphite-carbon-cache2]
+command=env PYTHONPATH=/opt/graphite/lib /opt/graphite/bin/carbon-cache.py --config /opt/graphite/conf/carbon2.conf --pidfile=/var/run/carbon/carbon2.pid --debug start
+directory=/opt/graphite
+environment=GRAPHITE_ROOT=/opt/graphite,GRAPHITE_CONF_DIR=/opt/graphite/conf,PYTHONPATH=/opt/graphite/lib
+user=graphite
+autostart=True
+autorestart=True
+log_stdout=true
+log_stderr=true
+logfile=/var/log/carbon/carbon2.out
+logfile_maxbytes=20MB
+logfile_backups=5
+

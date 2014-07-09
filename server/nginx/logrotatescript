@@ -1,0 +1,12 @@
+/var/log/nginx/*.log{
+    rotate 7
+    size 5k
+    dateext
+    dateformat -%Y-%m-%d
+    missingok
+    compress
+    sharedscripts
+    postrotate
+        test -r /var/run/nginx.pid && kill -USR1 `cat /var/run/nginx.pid`
+    endscript
+}

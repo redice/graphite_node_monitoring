@@ -1,0 +1,12 @@
+[program:graphite-gunicorn]
+command=gunicorn --bind=127.0.0.1:8080 --preload --pythonpath=/opt/graphite/webapp --workers=3 --log-file=/var/log/gunicorn-graphite/gunicorn.log --pid=/var/run/gunicorn-graphite/gunicorn-graphite.pid graphite.wsgi:application
+directory=/opt/graphite
+user=graphite
+autostart=True
+autorestart=True
+log_stdout=true
+log_stderr=true
+logfile=/var/log/gunicorn-graphite/gunicorn.out
+logfile_maxbytes=20MB
+logfile_backups=10
+

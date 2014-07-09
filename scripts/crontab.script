@@ -1,0 +1,10 @@
+### system monitoring
+*/1 * * * * /opt/gc.monitoring/basic-monitoring.sh
+
+### cassandra monitoring
+*/1 * * * * /opt/gc.monitoring/cassandra_monitoring.sh
+*/10 * * * * /opt/gc.monitoring/cassandra_columnfamilies_monitoring.sh
+
+###activemq monitoring
+*/1 * * * * /opt/gc.monitoring/activemq_monitoring.sh
+*/1 * * * * /opt/gc.monitoring/activemq_queues_monitoring.sh

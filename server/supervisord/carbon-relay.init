@@ -1,0 +1,13 @@
+[program:graphite-carbon-relay]
+command=env PYTHONPATH=/opt/graphite/lib /opt/graphite/bin/carbon-relay.py --config /opt/graphite/conf/carbon.conf --pidfile=/var/run/carbon/carbon-relay.pid --debug start
+directory=/opt/graphite
+environment=GRAPHITE_ROOT=/opt/graphite,GRAPHITE_CONF_DIR=/opt/graphite/conf,PYTHONPATH=/opt/graphite/lib
+user=graphite
+autostart=True
+autorestart=True
+log_stdout=true
+log_stderr=true
+logfile=/var/log/carbon/carbon-relay.out
+logfile_maxbytes=20MB
+logfile_backups=5
+
